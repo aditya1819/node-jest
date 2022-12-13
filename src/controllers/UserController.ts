@@ -3,7 +3,8 @@ import { get, isEmpty } from 'lodash';
 import UserServices from '../services/UserServices';
 
 class UserController {
-  getUsers(_req: Request, res: Response) {
+  async getUsers(_req: Request, res: Response) {
+    console.log('res : ', res);
     try {
       UserServices.getUsersData()
         .then((users: any[]) => {
